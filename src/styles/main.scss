@@ -1,0 +1,11 @@
+@import 'base';
+@import 'modal';
+@import 'color';
+@import 'components/player';
+@import 'components/square';
+
+
+.container {
+    display: flex;
+}
+

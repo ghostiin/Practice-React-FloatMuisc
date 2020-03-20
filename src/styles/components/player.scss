@@ -1,0 +1,217 @@
+$player-bg-color:#977aaa;
+
+
+.player {
+    flex:1;
+    width:50%;
+    height: 100vh;
+    background: #734dd6;
+    
+    padding: 3rem 0;
+    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.appplayer {
+
+
+    &__cover {
+        width: 30rem;
+        border-radius: 0.4rem;
+    }
+
+    &__playbg {
+        display: inline-block;
+        margin: 2rem;
+        width: 6.5rem;
+        height: 6.5rem;
+        background-color: #f8c12a;
+        text-align: center;
+        font-size: 2rem;
+        line-height: 6.5rem;
+        border-radius: 50%;
+        transition: all .2s;
+        cursor: pointer;
+        &:hover {
+            width: 7rem;
+            height: 7rem;
+            line-height: 7rem;
+        }
+    }
+
+    &__subbg {
+        display: inline-block;
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 0.5rem;
+        text-align: center;
+        line-height: 3.5rem;
+        border-radius: 50%;
+        transition: all .2s;
+        background-color: #fff;
+        color:#734dd6;
+        cursor: pointer;
+        &:hover {
+            width: 4rem;
+            height: 4rem;
+            line-height: 4rem;
+        }
+    }
+
+    &__controls {
+        margin-bottom: 1.5rem;
+    }
+
+    &__progressbar {
+        
+        width: 100%;
+        height: 0.3rem;
+        background-color: #dce4f365;
+        position: relative;
+        &--cur {
+            width: 20%;
+            height: 0.3rem;
+            background-color: #dce4f3;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    }
+
+    &__timetag {
+        &--cur{
+            position: absolute;
+            left:0;
+            top:0.4rem;
+            font-size: 1.4rem;
+            font-weight: 200;
+        }
+        &--dur{
+            position: absolute;
+            right:0;
+            top:0.4rem;
+            font-size: 1.4rem;
+            font-weight: 200;
+        }
+    }
+}
+
+.navigation {
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        background-color: #f8c12a;
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top: 3rem;
+        left: 6.5rem;
+        border-radius: 50%;
+
+        z-index: 20;
+       
+        
+
+        &--main {
+            display: block;
+            white-space:nowrap;
+            margin:1rem 1.5rem;
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 1.2rem;
+            cursor:pointer;
+        }
+
+        &--sub {
+            display: block;
+            white-space:nowrap;
+            margin:0 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 0.5rem;
+        }
+        
+    }
+
+    &__bg {
+        position: fixed;
+        top: 3.5rem;
+        left: 6.5rem;
+
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        background-image: radial-gradient(#572af8,#977aaa);
+        
+        z-index: 10;
+
+        transition: transform 0.4s;
+    }
+
+    &__nav {
+        height: 100vh;
+        width:0;
+        position: fixed;
+        top:0;
+        left: 0;
+        z-index: 15;
+       
+        text-align: center;
+        text-justify: center;
+        opacity: 0;
+        overflow-y: scroll;
+        transition: all .6s;
+
+        //for firfox
+        scrollbar-color: #dce4f3 transparent;
+        scrollbar-width: thin;
+        //for chrome 
+        
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+            background-color: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(220, 228, 243, 1);
+            border-radius: 0px;
+            border-top: 1px solid #edf2f9;
+            border-bottom: 1px solid #edf2f9;
+            border-left: 1px solid #f1f5fa;
+        }
+    }
+
+    &__list{
+        list-style: none;
+        margin: 20rem 0 3rem 0;
+    }   
+
+    &__item {
+
+        font-size: 1.8rem;
+        font-weight: 300;
+        margin: 2rem 0;
+        cursor:pointer;
+        &:hover {
+            color: #f7ce1a;
+            font-weight: 600;
+            
+        }
+    }
+
+    &__checkbox:checked ~ &__bg {
+        transform: scale(40);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        width:50%;
+        opacity: 1;
+    }
+    
+}
+
